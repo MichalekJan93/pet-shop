@@ -1,12 +1,15 @@
 @import 'mixins';
 
 .content{
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 
     .find-product{
         text-align: center;
 
         input{
-            width: 90%;
+            width: 100%;
             padding: 5px 5px 5px 30px;
             border: none;
             border-radius: 10px;
@@ -52,6 +55,7 @@
 
 .benefits{
     width: 285px;
+    max-width: 1200px;
     margin: 0 auto;
 
     .benefit{
@@ -65,3 +69,47 @@
         }
     }
 }
+
+@media only screen and (min-width: 600px) {
+
+    .main-information{
+        display: flex;
+
+        .main-text{
+            text-align: left !important;
+
+            h1{
+                margin-bottom: 20px;
+            }
+
+            a{
+                position: initial;
+                margin-left: 0;
+            }
+        }
+
+        img{
+            width: 350px !important;
+        }
+    }
+    .benefits{
+        display: flex;
+        width: auto;
+        padding: 0 1rem;
+        justify-content: space-around;
+        gap: 5%;
+
+        .benefit{
+            padding: 20px 0px;
+            gap: 5px;
+
+            img{
+                width: 30px;
+            }
+
+            p{
+                font-size: 0.8rem;
+            }
+        }
+    }
+  }
