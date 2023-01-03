@@ -58,6 +58,59 @@ header .customer .hamburger-menu {
   height: 15px;
 }
 
+@media only screen and (min-width: 900px) {
+  header .menu {
+    height: auto;
+    width: auto;
+    display: flex;
+    gap: 2rem;
+    position: initial;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    overflow-x: none;
+    transition: 0.5s;
+    padding-top: 0;
+  }
+  header .menu a {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    padding: 0;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: none;
+    color: black;
+    border-bottom: none;
+  }
+  header .menu a:hover {
+    text-decoration: underline;
+  }
+  header .menu a img {
+    width: 25px;
+  }
+  header .customer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  header .customer > * {
+    cursor: pointer;
+  }
+  header .customer .login {
+    display: block !important;
+    width: 25px;
+  }
+  header .customer .shopping-car {
+    width: 25px;
+  }
+  header .customer .hamburger-menu {
+    height: 15px;
+    display: none !important;
+  }
+}
 .content {
   padding: 0 1rem;
   max-width: 1200px;
@@ -95,6 +148,7 @@ header .customer .hamburger-menu {
   bottom: 20px;
   left: 50%;
   margin-left: -75px;
+  text-align: center;
   background-color: #fe9b01;
   color: white;
   text-decoration: none;
@@ -125,12 +179,61 @@ header .customer .hamburger-menu {
   width: 35px;
 }
 
+.main-blog-post {
+  background-color: #e8f6fd;
+  position: relative;
+  margin-bottom: 30px;
+}
+.main-blog-post .blog-post {
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.main-blog-post .blog-post h2 {
+  margin: 20px 0 10px 0;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.main-blog-post .blog-post p {
+  text-align: justify;
+  width: 90%;
+  margin: 0 auto;
+}
+.main-blog-post .blog-post a {
+  position: absolute;
+  width: 110px;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -55px;
+  text-align: center;
+  background-color: #fe9b01;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #66adb5 !important;
+}
+.main-blog-post .blog-post a:hover {
+  background-color: #b67001;
+}
+.main-blog-post .blog-post a:hover {
+  background-color: #45767b !important;
+}
+.main-blog-post img {
+  width: 70%;
+  display: block;
+  margin: 20px auto 50px auto;
+}
+
 @media only screen and (min-width: 600px) {
   .main-information {
     display: flex;
   }
   .main-information .main-text {
     text-align: left !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .main-information .main-text h1 {
     margin-bottom: 20px;
@@ -158,6 +261,55 @@ header .customer .hamburger-menu {
   }
   .benefits .benefit p {
     font-size: 0.8rem;
+  }
+  .main-blog-post {
+    background-color: #e8f6fd;
+    position: inherit;
+    margin-bottom: 30px;
+    padding: 50px 0;
+  }
+  .main-blog-post .blog-post {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-blog-post .blog-post .blog {
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-blog-post .blog-post .blog h2 {
+    margin: 20px 0 10px 0;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .main-blog-post .blog-post .blog p {
+    text-align: justify;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main-blog-post .blog-post .blog a {
+    position: initial;
+    width: 110px;
+    bottom: 10px;
+    margin: 20px 0 0 0;
+    text-align: center;
+  }
+  .main-blog-post img {
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 950px) {
+  .benefits .benefit img {
+    width: 35px;
+  }
+  .benefits .benefit p {
+    font-size: 1rem;
   }
 }
 * {
@@ -194,6 +346,9 @@ header .customer .hamburger-menu {
 .product-slider .title-products a:hover {
   color: #b67001;
 }
+.product-slider .slider {
+  margin-bottom: 20px;
+}
 .product-slider .slider .product-box {
   border: 1px solid rgb(221, 221, 221);
   width: 95% !important;
@@ -208,6 +363,7 @@ header .customer .hamburger-menu {
 .product-slider .slider .product-box .product-img {
   width: 95%;
   display: block;
+  margin: 0 auto 30px auto;
 }
 .product-slider .slider .product-box .product-rating {
   height: 15px;
@@ -248,7 +404,13 @@ header .customer .hamburger-menu {
 }
 .product-slider .slider .product-box .product-title {
   font-weight: 200;
+  margin: 10px 0;
 }
 .product-slider .slider .product-box .product-price {
   color: gray;
+  margin: 10px 0;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #fe9b01 !important;
 }/*# sourceMappingURL=style.css.map */

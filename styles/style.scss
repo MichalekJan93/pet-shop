@@ -41,7 +41,7 @@
     }
 
     .slider{
-
+        margin-bottom: 20px;
         .product-box{
             border: 1px solid rgb(221, 221, 221);
             width: 95% !important;
@@ -56,6 +56,7 @@
             .product-img{
                 width: 95%;
                 display: block;
+                margin: 0 auto 30px auto;
             }
 
             .product-rating{
@@ -105,14 +106,21 @@
 
             .product-title{
                 font-weight: 200;
-
+                margin: 10px 0;
             }
 
             .product-price{
                 color: gray;
+                margin: 10px 0;
             }
         }
+
+        
     }
+}
+
+.slick-prev:before,.slick-next:before{
+    color: #fe9b01 !important;
 }
 
 

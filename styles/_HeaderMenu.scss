@@ -68,3 +68,69 @@ header{
 
     }
 }
+
+@media only screen and (min-width: 900px){
+    header{
+        .menu{
+            height: auto;
+            width: auto;
+            display: flex;
+            gap: 2rem;
+            position: initial;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            overflow-x: none;
+            transition: 0.5s;
+            padding-top: 0;
+        
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                gap: 10px;
+                padding: 0;
+                text-decoration: none;
+                font-size: 1rem;
+                transition: none;
+                color: black;
+                border-bottom: none;
+        
+                &:hover{
+                    text-decoration: underline;
+                }
+        
+                img{
+                    width: 25px;
+                }
+            }
+        }
+
+        .customer{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            & > * {
+                cursor: pointer;
+            }
+    
+    
+            .login{
+                display: block !important;
+                width: 25px;
+            }
+    
+            .shopping-car{
+                width: 25px;
+            }
+    
+            .hamburger-menu{
+                height: 15px;
+                display: none !important;
+            }
+    
+        }
+    }
+}
