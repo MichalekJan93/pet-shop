@@ -1,6 +1,7 @@
 import { Header } from './components/Header.js';
 import { Slider } from './components/Slider.js';
 import { Benefits } from './components/Benefits.js';
+import { BlogPost } from './components/BlogPost.js';
 
 let category = [
     {
@@ -57,6 +58,16 @@ let benefits = [{
 
 let benefit = new Benefits(benefits, $('.page'));
 benefit.createBenefits();
+
+let posts = {
+    title: 'Jak vybrat terárium podle biotopu?',
+    content: 'Zatoužili jste mít doma kousek deštného pralesa nebo polopouště? Fascinuje vás život terarijních zvířat? Pokud zní odpovědi na tyto otázky ANO, tak gratulujeme, jste na cestě stát se teraristou. Poradíme vám, jaké terárium zvolit a jak ho zařídit tak, aby se v něm zvíře cítilo co nejlépe',
+    url: '#',
+    image: './img/web/terarium.png'
+} 
+
+let post = new BlogPost(posts, $('.page'));
+post.createBlogPost();
 
 let products = [{
         id: 1,
