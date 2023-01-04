@@ -1,5 +1,6 @@
 import { Header } from './components/Header.js';
 import { Slider } from './components/Slider.js';
+import { Benefits } from './components/Benefits.js';
 
 let category = [
     {
@@ -32,6 +33,30 @@ $(() => {
     });
 })
 
+let benefits = [{
+        id: 1,
+        title: 'Doprava zdarma',
+        image: './img/web/delivery-truck.png'
+    },
+    {
+        id: 2,
+        title: '99% spokojených zákazníků',
+        image: './img/web/positive-vote.png'
+    },
+    {
+        id: 3,
+        title: 'Dárek zdarma',
+        image: './img/web/gift-box.png'
+    },
+    {
+        id: 4,
+        title: '60 dnů na vrácení zboží',
+        image: './img/web/product-return.png'
+    }
+]
+
+let benefit = new Benefits(benefits, $('.page'));
+benefit.createBenefits();
 
 let products = [{
         id: 1,
@@ -154,5 +179,4 @@ let products = [{
 ]
 
 let slider = new Slider('Novinky', products, $('.page'));
-
 slider.createProductSlider();
