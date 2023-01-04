@@ -339,13 +339,6 @@ header .customer .hamburger-menu {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
-.product-slider .title-products a {
-  color: #fe9b01;
-  text-decoration: none;
-}
-.product-slider .title-products a:hover {
-  color: #b67001;
-}
 .product-slider .slider {
   margin-bottom: 20px;
 }
@@ -409,6 +402,20 @@ header .customer .hamburger-menu {
 .product-slider .slider .product-box .product-price {
   color: gray;
   margin: 10px 0;
+}
+
+.slick-next, .slick-prev {
+  position: absolute;
+  top: -3% !important;
+}
+
+.slick-next {
+  right: 10px !important;
+}
+
+.slick-prev {
+  left: auto !important;
+  right: 30px !important;
 }
 
 .slick-prev:before, .slick-next:before {
