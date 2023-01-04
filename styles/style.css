@@ -312,17 +312,6 @@ header .customer .hamburger-menu {
     font-size: 1rem;
   }
 }
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: Nunito, Arial, sans-serif;
-}
-
-.content-background {
-  background-color: #fff3e8;
-}
-
 .product-slider {
   padding: 0 1rem;
   max-width: 1200px;
@@ -398,6 +387,7 @@ header .customer .hamburger-menu {
 .product-slider .slider .product-box .product-title {
   font-weight: 200;
   margin: 10px 0;
+  height: 50px;
 }
 .product-slider .slider .product-box .product-price {
   color: gray;
@@ -420,4 +410,20 @@ header .customer .hamburger-menu {
 
 .slick-prev:before, .slick-next:before {
   color: #fe9b01 !important;
+}
+
+@media only screen and (max-width: 655px) {
+  .product-slider .slider .product-box .product-title {
+    font-size: 0.9rem;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Nunito, Arial, sans-serif;
+}
+
+.content-background {
+  background-color: #fff3e8;
 }/*# sourceMappingURL=style.css.map */

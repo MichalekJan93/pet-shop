@@ -1,5 +1,6 @@
 @import 'headerMenu';
 @import 'content';
+@import 'productSlider';
 @import 'https://fonts.googleapis.com/css?family=Nunito';
 
 *{
@@ -13,118 +14,7 @@
     background-color: #fff3e8;
 }
 
-.product-slider{
-    padding: 0 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
 
-    .title-products{
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        p{
-            font-size: 1.2rem;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-        }
-    }
-
-    .slider{
-        margin-bottom: 20px;
-        .product-box{
-            border: 1px solid rgb(221, 221, 221);
-            width: 95% !important;
-            margin: 5px;
-            padding: 5px;
-            border-radius: 15px;
-            -webkit-border-radius: 15px;
-            -moz-border-radius: 15px;
-            -ms-border-radius: 15px;
-            -o-border-radius: 15px;
-            
-            .product-img{
-                width: 95%;
-                display: block;
-                margin: 0 auto 30px auto;
-            }
-
-            .product-rating{
-                height: 15px;
-                position: relative;
-                
-                .rating{
-                    height: 15px;
-                    background-image: url('../img/web/star.png');
-                    background-repeat: space;
-                    background-size: 15px auto;
-                    position: absolute;
-                    z-index: 99;
-
-                    &.rating-1{
-                        width: 15px;
-                    }
-
-                    &.rating-2{
-                        width: 33px;
-                    }
-    
-                    &.rating-3{
-                        width: 51px;
-                    }
-    
-                    &.rating-4{
-                        width: 69px;
-                    }
-    
-                    &.rating-5{
-                        width: 87px;
-                    }
-                }
-
-                .no-rating{
-                    position: absolute;
-                    height: 15px;
-                    width: 87px;
-                    background-image: url('../img/web/star-hover.png');
-                    background-repeat: space;
-                    background-size: 15px auto;
-                    position: absolute;
-                    z-index: 1;
-                }
-            }
-
-            .product-title{
-                font-weight: 200;
-                margin: 10px 0;
-            }
-
-            .product-price{
-                color: gray;
-                margin: 10px 0;
-            }
-        }
-    }
-}
-
-.slick-next, .slick-prev{
-    position: absolute;
-    top: -3% !important;
-}
-
-.slick-next{
-    right: 10px !important;
-}
-
-.slick-prev{
-    left: auto !important;
-    right: 30px !important;
-}
-
-.slick-prev:before,.slick-next:before{
-    color: #fe9b01 !important;
-}
 
 
 

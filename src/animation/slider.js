@@ -16,7 +16,6 @@ $(() => {
           {
             breakpoint: 800,
             settings: {
-              arrows: false,
               slidesToShow: 3,
               slidesToScroll: 1,
             }
@@ -24,7 +23,6 @@ $(() => {
           {
             breakpoint: 480,
             settings: {
-              arrows: false,
               slidesToShow: 2,
               slidesToScroll: 1,
             }
