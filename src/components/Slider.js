@@ -1,5 +1,6 @@
 const _productBox = Symbol();
 const _productRating = Symbol();
+const _go = Symbol();
 
 export class Slider {
 
@@ -10,8 +11,9 @@ export class Slider {
     }
 
     [_productRating](rating){
-        let ratingDiv = $("<div>");
-        switch(rating){
+        console.log(parseInt(rating))
+            let ratingDiv = $("<div>");
+            switch(parseInt(rating)){
             case 1:
                 $(ratingDiv).addClass('rating rating-1');
                 break;
@@ -29,9 +31,10 @@ export class Slider {
                 break;
             default:
                 $(ratingDiv).addClass('rating rating-5');
-        }
-        return ratingDiv;
+            }
+            return ratingDiv;
     }
+
 
     [_productBox](products) {
         let sliderDiv = $('<div class="slider"</div>');
@@ -39,14 +42,13 @@ export class Slider {
             let productBoxDiv = $('<div>').attr('class', 'product-box '+ product.id);
             $(sliderDiv).append(productBoxDiv);
             let img = $('<img class="product-img">')
-            img.attr('src', product.image);
-            img.attr('alt', product.name);
+            $(img).attr('src', product.image);
+            $(img).attr('alt', product.name);
             $(productBoxDiv).append(img);
 
-            let productRatingDiv = $('<div class="product-rating"</div>');
-            let productNoRatingDiv = $('<div class="product-no-rating"</div>');
-
-            $(productRatingDiv).append(this[_productRating](parseInt(product.rating)));
+            let productRatingDiv = $('<div class="product-rating"></div>');
+            let productNoRatingDiv = $('<div class="no-rating"></div>');
+            $(productRatingDiv).append(this[_productRating](product.rating));
             $(productRatingDiv).append(productNoRatingDiv);
             $(productBoxDiv).append(productRatingDiv);
 
@@ -57,7 +59,8 @@ export class Slider {
             let productPriceDiv = $('<div class="product-price"</div>');
             $(productPriceDiv).text(product.price + ' Kč,-' );
             $(productBoxDiv).append(productPriceDiv);
-        });
+        }.bind(this));
+
 
         return $(sliderDiv);
     }
