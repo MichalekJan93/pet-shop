@@ -3,20 +3,21 @@ const _customer = Symbol();
 
 export class Header {
 
-    constructor(categories, location) {
+    constructor(categories, location, link) {
         this.categories = categories;
         this.location = location;
+        this.link = link;
     }
 
-    [_createMenu](categories){
+    [_createMenu](categories, link){
             let menuDiv = $("<div>");
             $(menuDiv).attr("class", "menu");
-            $.map($(categories), function(category, index){
+            $.map($(categories), function(category){
                 let hyperlink = $("<a>");
                 $(hyperlink).attr("href", "#");
                 $(hyperlink).text(category.name);
                 let image = $("<img>");
-                $(image).attr("src", category.icon);
+                $(image).attr("src", link + category.icon);
                 $(image).attr("alt", category.altTag);
                 $(hyperlink).prepend($(image));
                 $(menuDiv).append($(hyperlink));
@@ -24,17 +25,17 @@ export class Header {
             return $(menuDiv);
     }
 
-    [_customer](){
+    [_customer](link){
         let customerDiv = $("<div>");
         let imageLogin = $("<img>");
         let imageShoppingCar = $("<img>");
         let imageHamburgerMenu = $("<img>");
 
         $(customerDiv).attr("class", "customer");
-        $(imageLogin).attr("src", "./img/web/user.png");
+        $(imageLogin).attr("src", link + "./img/web/user.png");
         $(imageLogin).attr("alt", "pet shop");
         $(imageLogin).attr("class", "login");
-        $(imageShoppingCar).attr("src", "./img/web/shopping-cart.png");
+        $(imageShoppingCar).attr("src", link + "./img/web/shopping-cart.png");
         $(imageShoppingCar).attr("alt", "pet shop");
         $(imageShoppingCar).attr("class", "shopping-car");
         $(imageHamburgerMenu).attr("src", "./img/web/hamburger-menu.png");
@@ -53,14 +54,14 @@ export class Header {
             let image = $("<img>");
             let hyperlink = $("<a>");
             $(hyperlink).attr("href", "#");
-            $(image).attr("src", './img/web/logo.png');
+            $(image).attr("src", this.link + './img/web/logo.png');
             $(image).attr("alt", "pet shop");
             $(image).attr("class", "logo");
 
             $(hyperlink).append($(image));
             $(headerDiv).append($(hyperlink));
-            $(headerDiv).append(this[_createMenu](this.categories));
-            $(headerDiv).append(this[_customer]);
+            $(headerDiv).append(this[_createMenu](this.categories, this.link));
+            $(headerDiv).append(this[_customer](this.link));
             this.location.prepend($(headerDiv));
         })
     }
