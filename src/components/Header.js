@@ -53,11 +53,12 @@ export class Header {
             let headerDiv = $("<header>");
             let image = $("<img>");
             let hyperlink = $("<a>");
-            $(hyperlink).attr("href", "#");
-            $(image).attr("src", this.link + './img/web/logo.png');
-            $(image).attr("alt", "pet shop");
-            $(image).attr("class", "logo");
-
+            $(hyperlink).attr("href", this.link + "index.html");
+            $(image).attr({
+                "src": this.link + './img/web/logo.png',
+                "alt": "pet shop",
+                "class": "logo"
+            });
             $(hyperlink).append($(image));
             $(headerDiv).append($(hyperlink));
             $(headerDiv).append(this[_createMenu](this.categories, this.link));

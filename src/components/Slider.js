@@ -11,7 +11,6 @@ export class Slider {
     }
 
     [_productRating](rating){
-        console.log(parseInt(rating))
             let ratingDiv = $("<div>");
             switch(parseInt(rating)){
             case 1:
@@ -59,14 +58,36 @@ export class Slider {
             let productPriceDiv = $('<div class="product-price"</div>');
             $(productPriceDiv).text(product.price + ' Kč,-' );
             $(productBoxDiv).append(productPriceDiv);
-        }.bind(this));
 
+        }.bind(this));
 
         return $(sliderDiv);
     }
 
+    productPage(){
+        const targetNode = document.querySelector(`.page`);
+        
+        const config = {
+            childList: true,
+            subtree: true,
+        }
+
+        const callback = (mutationList, observer) => {
+            $('.product-box').on('click', function () {
+                const className = $(this).attr('class');
+                const gapIndex = className.indexOf(" ");
+                console.log(className.substring(gapIndex, className.length));
+              })
+        }
+
+        const observer = new MutationObserver(callback);
+
+        observer.observe(targetNode, config);
+    }
+
     createProductSlider(){
-        let productSlider = $('<div class="product-slider"></div>');
+        let productSlider = $('<div>');
+        $(productSlider).attr('class', 'product-slider ' + this.title)
         $(this.location).append($(productSlider));
         let titleDiv = $('<div class="title-products"></div>');
         let titleParagraph = $("<p>");
@@ -74,5 +95,6 @@ export class Slider {
         $(titleDiv).append($(titleParagraph));
         $(productSlider).append($(titleDiv));
         $(productSlider).append($(this[_productBox](this.products)));
+        this.productPage(this.title);
     }
  }

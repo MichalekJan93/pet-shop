@@ -28,3 +28,10 @@ header.createHeader();
 
 let footer = new Footer($('.page'));
 footer.createFooter();
+
+
+const url = new URL(window.location.href);
+
+const product = url.searchParams.get('product');
+
+console.log(product);

@@ -28,7 +28,21 @@
             </div>
         </div>
     </div>
+    <a  class='testa' href="">test</a>
+
+    
+
     <script src="./src/mainPage.js" type="module"></script>
     <script src="./src/animation/slider.js"></script>
+    <script>
+        const baseUrl = '/pages/product.html';
+        const productName = '?product=testoviny';
+        const url = baseUrl + productName;
+        $('.testa').attr('href', url);
+        console.log($('.testa').attr('href'))
+
+        
+
+    </script>
 </body>
 </html>
