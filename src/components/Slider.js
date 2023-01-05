@@ -1,5 +1,5 @@
 const _productBox = Symbol();
-/* const _productRating = Symbol(); */
+const _productRating = Symbol();
 
 export class Slider {
 
@@ -9,8 +9,7 @@ export class Slider {
          this.location = location;
     }
 
-    productRating(rating){
-
+    [_productRating](rating){
         let ratingDiv = $("<div>");
         switch(rating){
             case 1:
@@ -37,7 +36,7 @@ export class Slider {
     [_productBox](products) {
         let sliderDiv = $('<div class="slider"</div>');
         $.map($(products), function(product) {
-            let productBoxDiv = $('<div class="product-box"</div>');
+            let productBoxDiv = $('<div>').attr('class', 'product-box '+ product.id);
             $(sliderDiv).append(productBoxDiv);
             let img = $('<img class="product-img">')
             img.attr('src', product.image);
@@ -47,8 +46,7 @@ export class Slider {
             let productRatingDiv = $('<div class="product-rating"</div>');
             let productNoRatingDiv = $('<div class="product-no-rating"</div>');
 
-
-            $(productRatingDiv).append();
+            $(productRatingDiv).append(this[_productRating](parseInt(product.rating)));
             $(productRatingDiv).append(productNoRatingDiv);
             $(productBoxDiv).append(productRatingDiv);
 

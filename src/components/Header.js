@@ -38,7 +38,7 @@ export class Header {
         $(imageShoppingCar).attr("src", link + "./img/web/shopping-cart.png");
         $(imageShoppingCar).attr("alt", "pet shop");
         $(imageShoppingCar).attr("class", "shopping-car");
-        $(imageHamburgerMenu).attr("src", "./img/web/hamburger-menu.png");
+        $(imageHamburgerMenu).attr("src", link + "./img/web/hamburger-menu.png");
         $(imageHamburgerMenu).attr("alt", "pet shop");
         $(imageHamburgerMenu).attr("class", "hamburger-menu");
         $(customerDiv).append($(imageLogin));

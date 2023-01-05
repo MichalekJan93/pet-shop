@@ -346,11 +346,21 @@ header .customer .hamburger-menu {
   width: 95% !important;
   margin: 5px;
   padding: 5px;
+  cursor: pointer;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
+  transition: all 300ms;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+}
+.product-slider .slider .product-box:hover {
+  box-shadow: 0px 0px 3px 2px rgb(240, 240, 240);
+  border-color: rgb(203, 203, 203);
 }
 .product-slider .slider .product-box .product-img {
   width: 95%;
