@@ -1,4 +1,3 @@
-
 export class Benefits{
 
     constructor(benefits, location){
