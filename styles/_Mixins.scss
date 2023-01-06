@@ -14,3 +14,8 @@
         background-color: #b67001;
     }
 }
+
+@mixin maxWidth {
+    max-width: 1200px;
+    margin: 0 auto;
+}

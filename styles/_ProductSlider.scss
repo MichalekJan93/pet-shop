@@ -49,51 +49,6 @@
                 margin: 0 auto 30px auto;
             }
 
-            .product-rating{
-                height: 15px;
-                position: relative;
-                
-                .rating{
-                    height: 15px;
-                    background-image: url('../img/web/star.png');
-                    background-repeat: space;
-                    background-size: 15px auto;
-                    position: absolute;
-                    z-index: 99;
-
-                    &.rating-1{
-                        width: 15px;
-                    }
-
-                    &.rating-2{
-                        width: 33px;
-                    }
-    
-                    &.rating-3{
-                        width: 51px;
-                    }
-    
-                    &.rating-4{
-                        width: 69px;
-                    }
-    
-                    &.rating-5{
-                        width: 87px;
-                    }
-                }
-
-                .no-rating{
-                    position: absolute;
-                    height: 15px;
-                    width: 87px;
-                    background-image: url('../img/web/star-hover.png');
-                    background-repeat: space;
-                    background-size: 15px auto;
-                    position: absolute;
-                    z-index: 1;
-                }
-            }
-
             .product-title{
                 font-weight: 200;
                 margin: 10px 0;
@@ -142,5 +97,50 @@
                 }
             }
         }
+    }
+}
+
+.product-rating{
+    height: 15px;
+    position: relative;
+    
+    .rating{
+        height: 15px;
+        background-image: url('../img/web/star.png');
+        background-repeat: space;
+        background-size: 15px auto;
+        position: absolute;
+        z-index: 99;
+
+        &.rating-1{
+            width: 15px;
+        }
+
+        &.rating-2{
+            width: 33px;
+        }
+
+        &.rating-3{
+            width: 51px;
+        }
+
+        &.rating-4{
+            width: 69px;
+        }
+
+        &.rating-5{
+            width: 87px;
+        }
+    }
+
+    .no-rating{
+        position: absolute;
+        height: 15px;
+        width: 87px;
+        background-image: url('../img/web/star-hover.png');
+        background-repeat: space;
+        background-size: 15px auto;
+        position: absolute;
+        z-index: 1;
     }
 }

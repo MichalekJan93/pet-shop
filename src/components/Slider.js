@@ -4,10 +4,11 @@ const _go = Symbol();
 
 export class Slider {
 
-    constructor(title, products, location) {
+    constructor(title, products, location, link) {
          this.title = title;
          this.products = products;
          this.location = location;
+         this.link = link;
     }
 
     [_productRating](rating){
@@ -35,13 +36,13 @@ export class Slider {
     }
 
 
-    [_productBox](products) {
+    [_productBox](products, link) {
         let sliderDiv = $('<div class="slider"</div>');
         $.map($(products), function(product) {
             let productBoxDiv = $('<div>').attr('class', 'product-box '+ product.id);
             $(sliderDiv).append(productBoxDiv);
             let img = $('<img class="product-img">')
-            $(img).attr('src', product.image);
+            $(img).attr('src', link + product.image);
             $(img).attr('alt', product.name);
             $(productBoxDiv).append(img);
 
@@ -65,24 +66,21 @@ export class Slider {
     }
 
     productPage(){
-        const targetNode = document.querySelector(`.page`);
-        
-        const config = {
-            childList: true,
-            subtree: true,
-        }
+        $(document).on('click','.product-box', function(){
+            const className = $(this).attr('class');
+            const gapIndex = className.indexOf(" ");
 
-        const callback = (mutationList, observer) => {
-            $('.product-box').on('click', function () {
-                const className = $(this).attr('class');
-                const gapIndex = className.indexOf(" ");
-                console.log(className.substring(gapIndex, className.length));
-              })
-        }
+            const productName = $(this).find('.product-title').text();
+            const id = className.substring(gapIndex, className.length);
+            const baseUrl = '/pages/product.html';
+            const get = `?product=${productName}`;
+            const url = baseUrl + get;
 
-        const observer = new MutationObserver(callback);
-
-        observer.observe(targetNode, config);
+            window.location.href = url
+            $.get(url, {id : 22}, function (err, data) {
+                console.log(id);
+            })
+        })
     }
 
     createProductSlider(){
@@ -94,7 +92,7 @@ export class Slider {
         $(titleParagraph).text(this.title);
         $(titleDiv).append($(titleParagraph));
         $(productSlider).append($(titleDiv));
-        $(productSlider).append($(this[_productBox](this.products)));
+        $(productSlider).append($(this[_productBox](this.products, this.link)));
         this.productPage(this.title);
     }
  }

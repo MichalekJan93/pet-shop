@@ -180,7 +180,7 @@ let products = [{
 }
 ]
 
-let sliderNews = new Slider('Novinky', products, $('.page'));
+let sliderNews = new Slider('Novinky', products, $('.page'), '');
 sliderNews.createProductSlider();
 
 let posts = {
@@ -193,7 +193,7 @@ let posts = {
 let post = new BlogPost(posts, $('.page'));
 post.createBlogPost();
 
-let sliderBestProducts = new Slider('Nejoblíbenější produkty', products, $('.page'));
+let sliderBestProducts = new Slider('Nejoblíbenější produkty', products, $('.page'), '');
 sliderBestProducts.createProductSlider();
 
 let footer = new Footer($('.page'));
