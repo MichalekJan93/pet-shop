@@ -1,6 +1,7 @@
 import { Header } from './components/Header.js';
 import { Slider } from './components/Slider.js';
 import { Footer } from './components/Footer.js';
+import { Product } from './components/Product.js';
 
 let category = [
     {
@@ -25,6 +26,27 @@ let category = [
 
 const header = new Header(category, $('.content-background'), '../');
 header.createHeader();
+
+let oneProduct = {
+    id: 1,
+    name: 'Přetahovadlo DOG FANTASY',
+    image: './img/products/granuleBrit.jpg',
+    description: 'Granule pro psy pro všechna seniorní plemena nízkou aktivitou.',
+    longDescription: 'Granule pro psy pro všechna seniorní plemena nízkou aktivitou, lososová příchuť, živočišné bílkoviny 40%, tuky (kuřecí) 12%, s kloubní výživou, bez obilovin, dietní, Přepočet - 139 Kč/1 kg',
+    price: '139',
+    amount: '28',
+    rating: '4',
+    parametrs: {
+        Hmotnost: '1 kg',
+        Krmivo: 'Granule',
+        Konzistence: 'Suché'
+    },
+    category: ['Psi', 'Krmivo'],
+    mainCategory: 'Krmivo'
+};
+
+let firstProduct = new Product(oneProduct,$('.page'),'../');
+firstProduct.createProductBox();
 
 let products = [{
     id: 1,
