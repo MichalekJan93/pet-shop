@@ -86,7 +86,7 @@ let products = [{
     price: '569',
     amount: '24',
     rating: '5',
-    parametrs: {
+    parametres: {
         Hmotnost: '1,5 kg',
         Krmivo: 'Granule',
         Konzistence: 'Suché'

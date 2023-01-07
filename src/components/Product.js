@@ -37,10 +37,10 @@ export class Product{
     }
 
     [_createProductMainContainer](title, rating, image, description, amount, price){
-        let productMainInformationDiv = $("<div></>");
+        let productMainInformationDiv = $('<div class="product-main-information"></>');
         let paragraph = $(`<p class="product-title">${title}</p>`);
 
-        productMainInformationDiv.appendTo(paragraph);
+        productMainInformationDiv.append(paragraph);
 
         let productRatingDiv = $("<div class='product-rating'></div>");
         let noRatingDiv = $("<div class='no-rating'></div>");
@@ -61,7 +61,7 @@ export class Product{
             <p class="description">${description}</p>
             <div class="availability">Můžete mít ined | Skladem > ${amount}</div>
             <div class="add-product-to-cart">
-                <p>${price}</p>
+                <p>${price} Kč,-</p>
                 <div class="number-pieces">
                     <button class="add-count">-</button>
                     <span class="value">0</span>
