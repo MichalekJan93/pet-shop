@@ -78,6 +78,7 @@ export class Product{
     }
 
     [_createParametersContainer](parameters){
+        console.log(parameters)
         let parameterDiv = $('<div class="parametrs"></div>');
         let paragraph = $('<p class="caption">Parametry a specifikace</p>');
         let parameterTableDiv = $('<div class="parametr-table"></div>');
@@ -85,14 +86,14 @@ export class Product{
         $(parameterDiv).append(paragraph);
         $(parameterDiv).append(parameterTableDiv);
 
-        /* $.each(parameters, function (key, value) {
+        $.each(parameters, function (key, value) {
             let parameterDiv = $('<div class="parametr"></div>');
             let parameterNameDiv = $(`<div class="parametr-name">${key}</div>`);
             let parameterValueDiv = $(`<div class="parametr-value">${value}</div>`);
             $(parameterDiv).append(parameterNameDiv);
             $(parameterDiv).append(parameterValueDiv);
             $(parameterTableDiv).append(parameterDiv);
-        }); */
+        });
         return parameterDiv;
     }
 
@@ -106,7 +107,7 @@ export class Product{
         </div>
         `);
 
-        productDataDiv.append(this[_createParametersContainer]);
+        productDataDiv.append(this[_createParametersContainer](parameters));
 
         return productDataDiv;
     }

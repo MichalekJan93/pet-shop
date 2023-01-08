@@ -39,7 +39,7 @@ export class Slider {
     [_productBox](products, link) {
         let sliderDiv = $('<div class="slider"</div>');
         $.map($(products), function(product) {
-            let productBoxDiv = $('<div>').attr('class', 'product-box '+ product.id);
+            let productBoxDiv = $('<div>').attr('class', 'product-box '+ product._id);
             $(sliderDiv).append(productBoxDiv);
             let img = $('<img class="product-img">')
             $(img).attr('src', link + product.image);
@@ -73,11 +73,10 @@ export class Slider {
             const productName = $(this).find('.product-title').text();
             const id = className.substring(gapIndex, className.length);
             const baseUrl = '/pages/product.html';
-            const get = `?product=${productName}`;
+            const get = `?product=${productName}&id=${id}`;
             const url = baseUrl + get;
-
             window.location.href = url
-            $.get(url, {id : 22}, function (err, data) {
+            $.get(url, function (err, data) {
                 console.log(id);
             })
         })
@@ -93,6 +92,6 @@ export class Slider {
         $(titleDiv).append($(titleParagraph));
         $(productSlider).append($(titleDiv));
         $(productSlider).append($(this[_productBox](this.products, this.link)));
-        this.productPage(this.title);
+        this.productPage();
     }
  }
