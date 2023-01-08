@@ -25,7 +25,7 @@ $(() => {
         benefit.createBenefits();
     })
 
-    $.get('http://localhost:3000/api/products/date/7', function(data){
+    $.get('http://localhost:3000/api/products/', function(data){
         let sliderNews = new Slider('Novinky', data, $('.page'), '');
         sliderNews.createProductSlider();
 
