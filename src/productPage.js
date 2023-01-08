@@ -20,7 +20,6 @@ function getUrlParameter(name) {
 
 const id = getUrlParameter('id');
 
-
 $(() => {
 
     $.get(`http://localhost:3000/api/product/${id}`, function(data){

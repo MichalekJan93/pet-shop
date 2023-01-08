@@ -62,24 +62,6 @@ const Product = mongoose.model("products", productSchema);
 const Post = mongoose.model("posts", postSchema);
 const Benefit = mongoose.model("benefits", benefitSchema);
 
-const product1 = new Product({
-    _id : 8,
-    name : "Royal Canin Mini Light Weight Care 3 kg",
-    image : "./img/products/royalCanin.jpg",
-    description : 'test',
-    longDescription : 'test',
-    price : 574,
-    amount : 24,
-    rating: 5,
-    categories: ['Krmivo', 'Psi'],
-    categories: {
-        Barava : 'Modrá',
-        Material : 'Plast'
-    },
-    mainCategory : "Krmivo"
-});
-
-product1.save();
 
 app.get('/api/categories', (req, res) => {
     Category.find().then(categories => {res.json(categories)})

@@ -13,7 +13,7 @@ header img.logo {
 header .menu {
   height: 100%;
   width: 0;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 0;
   right: 0;
@@ -40,6 +40,21 @@ header .menu a:hover {
 header .menu a img {
   width: 25px;
 }
+header .menu .close-menu {
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  background-image: url("../img/web/close.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+header .menu .close-menu:hover {
+  background-image: url("../img/web/close-hover.png");
+}
 header .customer {
   display: flex;
   align-items: center;
@@ -61,8 +76,9 @@ header .customer .hamburger-menu {
 @media only screen and (min-width: 900px) {
   header .menu {
     height: auto;
-    width: auto;
+    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 2rem;
     position: initial;
     z-index: 1;
@@ -90,6 +106,9 @@ header .customer .hamburger-menu {
   }
   header .menu a img {
     width: 25px;
+  }
+  header .close-menu {
+    display: none;
   }
   header .customer {
     display: flex;

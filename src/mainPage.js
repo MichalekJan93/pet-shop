@@ -12,20 +12,13 @@ $(() => {
     })
 })
 
-
-$(() => {
-    $('.hamburger-menu').on('click', function () {
-        $('.menu').css('width', '200px');
-    });
-})
-
 $(() => {
     $.get('http://localhost:3000/api/benefits', function(data){
         let benefit = new Benefits(data, $('.page'));
         benefit.createBenefits();
     })
 
-    $.get('http://localhost:3000/api/products/', function(data){
+    $.get('http://localhost:3000/api/products/7', function(data){
         let sliderNews = new Slider('Novinky', data, $('.page'), '');
         sliderNews.createProductSlider();
 

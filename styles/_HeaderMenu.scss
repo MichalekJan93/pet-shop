@@ -13,7 +13,7 @@ header{
     .menu{
         height: 100%;
         width: 0;
-        position: fixed;
+        position: absolute;
         z-index: 1;
         top: 0;
         right: 0;
@@ -40,6 +40,24 @@ header{
     
             img{
                 width: 25px;
+                
+            }
+        }
+
+        .close-menu{
+            width: 23px;
+            height: 23px;
+            cursor: pointer;
+            background-image: url('../img/web/close.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 15px;
+            position: absolute;
+            top: 15px;
+            left: 10px;
+
+            &:hover{
+                background-image: url('../img/web/close-hover.png');
             }
         }
     }
@@ -73,8 +91,9 @@ header{
     header{
         .menu{
             height: auto;
-            width: auto;
+            width: 100%;
             display: flex;
+            justify-content: center;
             gap: 2rem;
             position: initial;
             z-index: 1;
@@ -105,6 +124,10 @@ header{
                     width: 25px;
                 }
             }
+        }
+
+        .close-menu{
+            display: none;
         }
 
         .customer{

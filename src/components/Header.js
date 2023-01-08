@@ -11,6 +11,8 @@ export class Header {
 
     [_createMenu](categories, link){
             let menuDiv = $("<div>");
+            let $cross = $("<div class=close-menu></div>");
+            menuDiv.append($cross);
             $(menuDiv).attr("class", "menu");
             $.map($(categories), function(category){
                 let hyperlink = $("<a>");
@@ -22,6 +24,7 @@ export class Header {
                 $(hyperlink).prepend($(image));
                 $(menuDiv).append($(hyperlink));
             })
+
             return $(menuDiv);
     }
 
@@ -64,6 +67,10 @@ export class Header {
             $(headerDiv).append(this[_createMenu](this.categories, this.link));
             $(headerDiv).append(this[_customer](this.link));
             this.location.prepend($(headerDiv));
+
+            $.get('./src/animation/menu.js', function(script) {
+            eval(script);
+            });
         })
     }
 }
